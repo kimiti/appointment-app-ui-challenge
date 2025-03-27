@@ -53,4 +53,16 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+
+    // Coil for Compose
+    implementation("io.coil-kt:coil-compose:2.7.0")
+
+    // Navigation Compose
+    implementation("androidx.navigation:navigation-compose:2.9.8")
+
+    // Gson
+    implementation("com.google.code.gson:gson:2.13.2")
+
+    implementation("com.github.ismaeldivita:chip-navigation-bar:1.4.0")
+    implementation("com.github.bumptech.glide:glide:5.0.7")
 }
