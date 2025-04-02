@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -34,7 +36,7 @@ fun SplashScreen(onStartClick: () -> Unit = {}) {
         modifier = Modifier
             .fillMaxSize()
             .background(Color.White)
-    ){
+    ) {
         Image(
             painter = painterResource(R.drawable.background_green),
             contentDescription = null,
@@ -51,14 +53,15 @@ fun SplashScreen(onStartClick: () -> Unit = {}) {
                 .align(Alignment.BottomCenter)
                 .padding(bottom = 325.dp)
         )
-        Box(modifier = Modifier
-            .fillMaxWidth()
-            .height(325.dp)
-            .align(Alignment.BottomCenter)
-            .background(
-                color = Color.White,
-                shape = RoundedCornerShape(topStart = 50.dp, topEnd = 50.dp)
-            )
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(325.dp)
+                .align(Alignment.BottomCenter)
+                .background(
+                    color = Color.White,
+                    shape = RoundedCornerShape(topStart = 50.dp, topEnd = 50.dp)
+                )
         ) {
             Column(
                 modifier = Modifier
@@ -88,6 +91,28 @@ fun SplashScreen(onStartClick: () -> Unit = {}) {
                         .padding(top = 12.dp)
                 )
                 Spacer(modifier = Modifier.weight(1f))
+                Text(text = stringResource(R.string.subtitle))
+                Spacer(modifier = Modifier.weight(1f))
+                Button(
+                    onClick = {},
+                    modifier = Modifier
+                        .padding(bottom = 16.dp)
+                        .fillMaxWidth()
+                        .height(55.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = colorResource(R.color.green)
+                    ),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Text(
+                        text = "Get Started",
+                        color = Color.White,
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+
+                }
+                Spacer(modifier = Modifier.height(16.dp))
             }
         }
     }
