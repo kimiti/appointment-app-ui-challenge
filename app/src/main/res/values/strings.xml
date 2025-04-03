@@ -2,4 +2,5 @@
     <string name="app_name">Appointment app UI Challenge</string>
     <string name="title1">Consult only with a</string>
     <string name="title2">Doctor You trust</string>
+    <string name="subtitle">We can help you to find available\n doctor appointment near you</string>
 </resources>
