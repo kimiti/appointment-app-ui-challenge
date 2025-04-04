@@ -91,7 +91,14 @@ fun SplashScreen(onStartClick: () -> Unit = {}) {
                         .padding(top = 12.dp)
                 )
                 Spacer(modifier = Modifier.weight(1f))
-                Text(text = stringResource(R.string.subtitle))
+                Text(
+                    text = stringResource(R.string.subtitle),
+                    color = Color.Gray,
+                    fontSize = 18.sp,
+                    lineHeight = 44.sp,
+                    modifier = Modifier
+                        .padding(top = 12.dp)
+                )
                 Spacer(modifier = Modifier.weight(1f))
                 Button(
                     onClick = {},
