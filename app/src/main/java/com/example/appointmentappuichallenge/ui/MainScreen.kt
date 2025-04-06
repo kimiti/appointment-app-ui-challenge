@@ -38,12 +38,18 @@ fun MainScreenContent() {
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Column(modifier = Modifier.weight(1f)) {
-                        Text(text = "Hi, John Doe",
+                        Text(
+                            text = "Hi, John Doe",
                             color = Color.Black,
                             fontSize = 18.sp,
                             fontWeight = FontWeight.Bold
                         )
-                        Text(text = "What do you feel!")
+                        Text(
+                            text = "What do you feel!",
+                            color = Color.Black,
+                            fontSize = 27.sp,
+                            fontWeight = FontWeight.Bold
+                        )
                     }
                 }
             }
