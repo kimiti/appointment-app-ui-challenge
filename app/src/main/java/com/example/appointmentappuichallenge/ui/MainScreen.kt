@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.OutlinedTextField
@@ -97,6 +98,15 @@ fun MainScreenContent() {
                         unfocusedContainerColor = colorResource(R.color.lightGrey)
 
                     )
+                )
+
+                Spacer(modifier = Modifier.height(16.dp))
+                Image(
+                    painter = painterResource(R.drawable.banner),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .wrapContentHeight()
                 )
             }
         }
