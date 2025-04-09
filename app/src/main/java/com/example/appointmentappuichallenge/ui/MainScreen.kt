@@ -1,5 +1,6 @@
 package com.example.appointmentappuichallenge.ui
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -147,6 +148,17 @@ fun BottomMenuItem(
             contentDescription = null,
             tint = content
         )
+        AnimatedVisibility(visible = isSelected) {
+            Row() {
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(
+                    text = title,
+                    color = content,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 14.sp
+                )
+            }
+        }
     }
 
 }
