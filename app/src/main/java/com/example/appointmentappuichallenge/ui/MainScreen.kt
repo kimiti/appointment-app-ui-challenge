@@ -51,7 +51,9 @@ fun MainScreenContent() {
     Scaffold(
         bottomBar = {
             BottomAppBar(
-                modifier = Modifier.shadow(elevation = 5.dp)
+                modifier = Modifier.shadow(elevation = 5.dp),
+                containerColor = colorResource(R.color.lightGrey),
+                tonalElevation = 5.dp
             ) { }
         }
     ) { paddingValues ->
