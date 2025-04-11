@@ -61,6 +61,24 @@ fun MainScreenContent() {
                     isSelected = selectedBottomItem == 0,
                     onClick = {selectedBottomItem = 0}
                 )
+                BottomMenuItem(
+                    iconId = R.drawable.bottom_btn2,
+                    title = "explorer",
+                    isSelected = selectedBottomItem == 1,
+                    onClick = {selectedBottomItem = 2}
+                )
+                BottomMenuItem(
+                    iconId = R.drawable.bottom_btn3,
+                    title = "Bookmark",
+                    isSelected = selectedBottomItem == 3,
+                    onClick = {selectedBottomItem = 3}
+                )
+                BottomMenuItem(
+                    iconId = R.drawable.bottom_btn4,
+                    title = "Profile",
+                    isSelected = selectedBottomItem == 4,
+                    onClick = {selectedBottomItem = 4}
+                )
             }
         }
     ) { paddingValues ->
