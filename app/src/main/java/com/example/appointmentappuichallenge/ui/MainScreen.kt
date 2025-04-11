@@ -54,7 +54,14 @@ fun MainScreenContent() {
                 modifier = Modifier.shadow(elevation = 5.dp),
                 containerColor = colorResource(R.color.lightGrey),
                 tonalElevation = 5.dp
-            ) { }
+            ) {
+                BottomMenuItem(
+                    iconId = R.drawable.bottom_btn1,
+                    title = "Home",
+                    isSelected = selectedBottomItem == 0,
+                    onClick = {selectedBottomItem = 0}
+                )
+            }
         }
     ) { paddingValues ->
         LazyColumn(
