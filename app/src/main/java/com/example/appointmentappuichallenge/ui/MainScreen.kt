@@ -42,7 +42,7 @@ import com.example.appointmentappuichallenge.R
 
 @Preview
 @Composable
-fun MainScreenContent() {
+fun MainScreen() {
     var searchText by remember { mutableStateOf("") }
     var selectedBottomItem by remember { mutableStateOf(0) }
 
