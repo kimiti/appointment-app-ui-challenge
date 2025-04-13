@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -55,30 +56,36 @@ fun MainScreen() {
                 containerColor = colorResource(R.color.lightGrey),
                 tonalElevation = 5.dp
             ) {
-                BottomMenuItem(
-                    iconId = R.drawable.bottom_btn1,
-                    title = "Home",
-                    isSelected = selectedBottomItem == 0,
-                    onClick = {selectedBottomItem = 0}
-                )
-                BottomMenuItem(
-                    iconId = R.drawable.bottom_btn2,
-                    title = "explorer",
-                    isSelected = selectedBottomItem == 1,
-                    onClick = {selectedBottomItem = 2}
-                )
-                BottomMenuItem(
-                    iconId = R.drawable.bottom_btn3,
-                    title = "Bookmark",
-                    isSelected = selectedBottomItem == 3,
-                    onClick = {selectedBottomItem = 3}
-                )
-                BottomMenuItem(
-                    iconId = R.drawable.bottom_btn4,
-                    title = "Profile",
-                    isSelected = selectedBottomItem == 4,
-                    onClick = {selectedBottomItem = 4}
-                )
+                Row(modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly,
+                    verticalAlignment = Alignment.CenterVertically)
+                {
+                    BottomMenuItem(
+                        iconId = R.drawable.bottom_btn1,
+                        title = "Home",
+                        isSelected = selectedBottomItem == 0,
+                        onClick = {selectedBottomItem = 0}
+                    )
+                    BottomMenuItem(
+                        iconId = R.drawable.bottom_btn2,
+                        title = "explorer",
+                        isSelected = selectedBottomItem == 1,
+                        onClick = {selectedBottomItem = 2}
+                    )
+                    BottomMenuItem(
+                        iconId = R.drawable.bottom_btn3,
+                        title = "Bookmark",
+                        isSelected = selectedBottomItem == 3,
+                        onClick = {selectedBottomItem = 3}
+                    )
+                    BottomMenuItem(
+                        iconId = R.drawable.bottom_btn4,
+                        title = "Profile",
+                        isSelected = selectedBottomItem == 4,
+                        onClick = {selectedBottomItem = 4}
+                    )
+                }
+
             }
         }
     ) { paddingValues ->
@@ -185,7 +192,7 @@ fun BottomMenuItem(
         )
         AnimatedVisibility(visible = isSelected) {
             Row() {
-                Spacer(modifier = Modifier.height(4.dp))
+                Spacer(modifier = Modifier.width(4.dp))
                 Text(
                     text = title,
                     color = content,
