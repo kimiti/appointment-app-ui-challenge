@@ -24,8 +24,12 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
 
                     NavHost(navController = navController, startDestination = "splash") {
-                        composable("splash"){
-                            SplashScreen()
+                        composable("splash") {
+                            SplashScreen(
+                                onStartClick = { navController.navigate("main"){
+                                    popUpTo("main"){inclusive=true}
+                                } }
+                            )
                         }
                         composable("main") {
                             MainScreen()
