@@ -101,7 +101,7 @@ fun SplashScreen(onStartClick: () -> Unit = {}) {
                 )
                 Spacer(modifier = Modifier.weight(1f))
                 Button(
-                    onClick = {},
+                    onClick = {onStartClick()},
                     modifier = Modifier
                         .padding(bottom = 16.dp)
                         .fillMaxWidth()
