@@ -1,4 +1,7 @@
 package com.example.appointmentappuichallenge.viewModel
 
-class MainViewModel {
+import androidx.lifecycle.ViewModel
+
+class MainViewModel: ViewModel() {
+
 }
