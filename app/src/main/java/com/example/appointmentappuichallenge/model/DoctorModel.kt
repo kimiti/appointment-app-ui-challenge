@@ -1,6 +1,6 @@
 package com.example.appointmentappuichallenge.model
 
-data class doctorModel(
+data class DoctorModel(
     val Address: String = "",
     val Biography: String = "",
     val id: Int = 0,
