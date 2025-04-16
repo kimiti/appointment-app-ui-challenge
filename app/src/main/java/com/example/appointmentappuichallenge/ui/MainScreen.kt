@@ -40,13 +40,29 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.appointmentappuichallenge.R
+import com.example.appointmentappuichallenge.model.DoctorModel
+import com.example.appointmentappuichallenge.viewModel.MainViewModel
+
+
+@Composable
+fun MainScreen(
+    viewModel: MainViewModel,
+    onDoctorClick: (DoctorModel) -> Unit = {}
+) {
+    MainScreenContent(
+        doctor = viewModel.loadDoctors()
+    )
+}
+
 
 @Preview
 @Composable
-fun MainScreen() {
+fun MainScreenContent(
+    doctor: List<DoctorModel> = emptyList(),
+    onDoctorClick: (DoctorModel) -> Unit = {}
+) {
     var searchText by remember { mutableStateOf("") }
     var selectedBottomItem by remember { mutableStateOf(0) }
-
 
 
     Scaffold(
@@ -56,33 +72,35 @@ fun MainScreen() {
                 containerColor = colorResource(R.color.lightGrey),
                 tonalElevation = 5.dp
             ) {
-                Row(modifier = Modifier.fillMaxWidth(),
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly,
-                    verticalAlignment = Alignment.CenterVertically)
+                    verticalAlignment = Alignment.CenterVertically
+                )
                 {
                     BottomMenuItem(
                         iconId = R.drawable.bottom_btn1,
                         title = "Home",
                         isSelected = selectedBottomItem == 0,
-                        onClick = {selectedBottomItem = 0}
+                        onClick = { selectedBottomItem = 0 }
                     )
                     BottomMenuItem(
                         iconId = R.drawable.bottom_btn2,
                         title = "explorer",
                         isSelected = selectedBottomItem == 1,
-                        onClick = {selectedBottomItem = 2}
+                        onClick = { selectedBottomItem = 2 }
                     )
                     BottomMenuItem(
                         iconId = R.drawable.bottom_btn3,
                         title = "Bookmark",
                         isSelected = selectedBottomItem == 3,
-                        onClick = {selectedBottomItem = 3}
+                        onClick = { selectedBottomItem = 3 }
                     )
                     BottomMenuItem(
                         iconId = R.drawable.bottom_btn4,
                         title = "Profile",
                         isSelected = selectedBottomItem == 4,
-                        onClick = {selectedBottomItem = 4}
+                        onClick = { selectedBottomItem = 4 }
                     )
                 }
 
