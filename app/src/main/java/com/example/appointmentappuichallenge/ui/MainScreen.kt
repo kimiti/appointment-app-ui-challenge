@@ -222,3 +222,10 @@ fun BottomMenuItem(
     }
 
 }
+
+
+
+@Composable
+fun DoctorItem(modifier: Modifier = Modifier){
+
+}

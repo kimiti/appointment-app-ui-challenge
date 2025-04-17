@@ -13,8 +13,12 @@ import androidx.navigation.compose.rememberNavController
 import com.example.appointmentappuichallenge.ui.MainScreen
 import com.example.appointmentappuichallenge.ui.theme.AppointmentAppUIChallengeTheme
 import com.example.appointmentappuichallenge.ui.theme.SplashScreen
+import com.example.appointmentappuichallenge.viewModel.MainViewModel
 
 class MainActivity : ComponentActivity() {
+    private val viewModel = MainViewModel()
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -32,7 +36,9 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         composable("main") {
-                            MainScreen()
+                            MainScreen(
+                                viewModel = viewModel
+                            )
                         }
                     }
                 }
