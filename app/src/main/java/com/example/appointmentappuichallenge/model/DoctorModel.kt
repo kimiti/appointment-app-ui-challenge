@@ -3,9 +3,9 @@ package com.example.appointmentappuichallenge.model
 data class DoctorModel(
     val Address: String = "",
     val Biography: String = "",
-    val id: Int = 0,
+    val Id: Int = 0,
     val Name: String = "",
-    val Picture: String = "",
+    val Picture: Int = 0,
     val Special: String = "",
     val Expriense: String = "",
     val Cost: String = "",
