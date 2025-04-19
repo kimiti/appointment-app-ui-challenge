@@ -60,7 +60,6 @@ fun MainScreen(
 }
 
 
-@Preview
 @Composable
 fun MainScreenContent(
     doctor: List<DoctorModel> = emptyList(),
@@ -182,6 +181,7 @@ fun MainScreenContent(
                         .fillMaxWidth()
                         .wrapContentHeight()
                 )
+                Spacer(modifier = Modifier.height(16.dp))
             }
         }
     }
@@ -294,7 +294,7 @@ fun DoctorItem(doctor: DoctorModel, onClick: () -> Unit = {}) {
 }
 
 
-@Preview
+
 @Composable
 fun DoctorItemPreview() {
     val sampleDoctor = DoctorModel(
@@ -304,8 +304,20 @@ fun DoctorItemPreview() {
         Picture = R.drawable.dr_david_johnson,
         Address = "123 Main St",
         Biography = "Sample Biography",
-        Cost = "$50"
+        Cost = "$50",
+        Location = "Sample Location",
+        Mobile = "1234567890",
+        Patients = "100+",
+        Rating = "4.5",
+        Site = "www.sample.com"
 
     )
     DoctorItem(doctor = sampleDoctor)
+}
+
+
+@Preview
+@Composable
+fun MainScreenContentPreview(){
+    MainScreenContent()
 }
