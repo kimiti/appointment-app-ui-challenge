@@ -243,8 +243,8 @@ fun DoctorItem(doctor: DoctorModel, onClick: () -> Unit = {}) {
                 .fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            AsyncImage(
-                model = doctor.Picture,
+            Image(
+                painter = painterResource(doctor.Picture),
                 contentDescription = null,
                 modifier = Modifier
                     .size(80.dp)
@@ -252,6 +252,15 @@ fun DoctorItem(doctor: DoctorModel, onClick: () -> Unit = {}) {
                     .background(color = colorResource(R.color.gray)),
                 contentScale = ContentScale.Crop
             )
+//            AsyncImage(
+//                model = doctor.Picture,
+//                contentDescription = null,
+//                modifier = Modifier
+//                    .size(80.dp)
+//                    .clip(RoundedCornerShape(50.dp))
+//                    .background(color = colorResource(R.color.gray)),
+//                contentScale = ContentScale.Crop
+//            )
             Spacer(modifier = Modifier.width(12.dp))
             Column(modifier = Modifier.weight(1f)) {
                 Text(
@@ -270,9 +279,15 @@ fun DoctorItem(doctor: DoctorModel, onClick: () -> Unit = {}) {
             }
             Text(
                 text = doctor.Cost,
-                fontSize = 18.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.Black
+                fontSize = 14.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = colorResource(R.color.green),
+                modifier = Modifier
+                    .background(
+                        color = colorResource(R.color.lightGreen),
+                        shape = RoundedCornerShape(50.dp)
+                    )
+                    .padding(horizontal = 8.dp, vertical = 4.dp)
             )
         }
     }
@@ -288,7 +303,8 @@ fun DoctorItemPreview() {
         Special = "Cardiologist",
         Picture = R.drawable.dr_david_johnson,
         Address = "123 Main St",
-        Biography = "Sample Biography"
+        Biography = "Sample Biography",
+        Cost = "$50"
 
     )
     DoctorItem(doctor = sampleDoctor)
