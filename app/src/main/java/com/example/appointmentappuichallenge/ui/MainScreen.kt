@@ -182,6 +182,20 @@ fun MainScreenContent(
                         .wrapContentHeight()
                 )
                 Spacer(modifier = Modifier.height(16.dp))
+
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = "NearBy Doctor",
+                        color = Color.Black,
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.weight(1f)
+                    )
+                }
             }
         }
     }
@@ -294,7 +308,6 @@ fun DoctorItem(doctor: DoctorModel, onClick: () -> Unit = {}) {
 }
 
 
-
 @Composable
 fun DoctorItemPreview() {
     val sampleDoctor = DoctorModel(
@@ -318,6 +331,6 @@ fun DoctorItemPreview() {
 
 @Preview
 @Composable
-fun MainScreenContentPreview(){
+fun MainScreenContentPreview() {
     MainScreenContent()
 }
