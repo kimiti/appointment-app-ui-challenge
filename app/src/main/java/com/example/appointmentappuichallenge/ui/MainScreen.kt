@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Card
@@ -57,14 +58,14 @@ fun MainScreen(
     onDoctorClick: (DoctorModel) -> Unit = {}
 ) {
     MainScreenContent(
-        doctor = viewModel.loadDoctors()
+        doctors = viewModel.loadDoctors()
     )
 }
 
 
 @Composable
 fun MainScreenContent(
-    doctor: List<DoctorModel> = emptyList(),
+    doctors: List<DoctorModel> = emptyList(),
     onDoctorClick: (DoctorModel) -> Unit = {}
 ) {
     var searchText by remember { mutableStateOf("") }
@@ -205,7 +206,7 @@ fun MainScreenContent(
                 Spacer(modifier = Modifier.height(16.dp))
             }
 
-            if (doctor.isNotEmpty()) {
+            if (doctors == null) {
                 item {
                     Box(
                         modifier = Modifier
@@ -217,7 +218,10 @@ fun MainScreenContent(
                     }
                 }
             } else {
-                
+                items(doctors) { doctor ->
+                    DoctorItem(doctor = doctor)
+                    Spacer(modifier = Modifier.height(16.dp))
+                }
             }
         }
     }
@@ -354,5 +358,23 @@ fun DoctorItemPreview() {
 @Preview
 @Composable
 fun MainScreenContentPreview() {
-    MainScreenContent()
+    val sampleDoctor = listOf(
+        DoctorModel(
+            Id = 1,
+            Name = "Dr Jane Doe",
+            Special = "Cardiologist",
+            Picture = R.drawable.dr_david_johnson,
+            Address = "123 Main St",
+            Biography = "Sample Biography",
+            Cost = "$50",
+            Location = "Sample Location",
+            Mobile = "1234567890",
+            Patients = "100+",
+            Rating = "4.5",
+            Site = "www.sample.com"
+
+        )
+    )
+
+    MainScreenContent(doctors = sampleDoctor)
 }
