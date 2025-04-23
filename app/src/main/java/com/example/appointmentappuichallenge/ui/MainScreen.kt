@@ -347,7 +347,7 @@ fun DoctorItemPreview() {
         Location = "Sample Location",
         Mobile = "1234567890",
         Patients = "100+",
-        Rating = "4.5",
+        Rating = 4.5,
         Site = "www.sample.com"
 
     )
